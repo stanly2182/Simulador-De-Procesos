@@ -23,7 +23,7 @@ public class ProcessSimulator {
 		Process process = null;
 		int idProcess [] = new int[4];
 		int stateProcess;
-		int priority1;
+		int priority;
 		int numberInstructions;
 		int blockInstruction;
 		int eventNeeded;
