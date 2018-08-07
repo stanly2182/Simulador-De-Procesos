@@ -4,22 +4,28 @@ import complements.Node;
 
 public class List {
 	
+	//Nodo de referencia
 	private Node start;
+	//tamaño de la lista
 	private int size;
 	
+	//constructor para inicializar las variables
 	public List() {
 		start = null;
 		size = 0;
 	}
 	
+	//Metodo para saber si la lista esta vacia
 	public boolean isEmpty() {
 		return start == null;
 	}
 	
+	//Metodo obtener el tamaño de la lista
 	public int getSize() {
 		return size;
 	}
 	
+	//Metodo para añadir un elemento al final de la lista
 	public void addEnd(Object value) {
 		Node newNode = new Node();
 		
@@ -38,6 +44,7 @@ public class List {
 		size++;
 	}
 	
+	//Metodo para añadir un elemento en un lugar determinado de la lista
 	public void addByPosition(int position, Object value) {
 		if(position >= 0 && position <= size) {
 			Node newNode = new Node();
@@ -70,6 +77,7 @@ public class List {
 		}
 	}
 	
+	// Metodo para eliminar elementos de una lista
 	public void delete(int position) {
 		if(position >= 0 && position <= size) {
 			Node auxiliary = start;
@@ -93,7 +101,8 @@ public class List {
 		}
 	}
 	
-    public void editarPorPosicion(int position , Object value){
+	//Metodo para modificar elementos en la lista
+    public void modify(int position , Object value){
     	
         if(position>=0 && position<size){            
             if(position == 0){
@@ -109,6 +118,17 @@ public class List {
             }
         }
     }
-
-	
+    
+    //Metodo para eliminar la lista
+    public void deleteList() {
+    	Node auxiliary;
+    	while (start.getNext() != null) {
+    		auxiliary = start.getNext();
+    		start.setNext(null);
+    		start.setValue(null);
+    		start = auxiliary;
+    	}
+    	start.setValue(null);
+    	size = 0;
+    }	
 }
